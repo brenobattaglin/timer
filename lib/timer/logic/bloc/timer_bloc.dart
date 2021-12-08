@@ -18,6 +18,7 @@ class TimerBloc extends Bloc<TimerEvent, TimerState> {
         super(TimerInitial(_duration)) {
     on<TimerStarted>(_onStarted);
     on<TimerTicked>(_onTicked);
+    on<TimerPaused>(_onPaused);
   }
 
   // Cancel the subscription when the bloc is closed.
@@ -45,5 +46,12 @@ class TimerBloc extends Bloc<TimerEvent, TimerState> {
     emit(
       event.duration > 0 ? TimerRunning(event.duration) : TimerRunningFinished(),
     );
+  }
+
+  void _onPaused(TimerPaused event, Emitter<TimerState> emit) {
+    if (state is TimerRunning) {
+      _tickerSubscription?.pause();
+      emit(TimerRunningPaused(state.duration));
+    }
   }
 }
