@@ -31,7 +31,7 @@ class TimerRunningPaused extends TimerState {
 }
 
 class TimerRunningFinished extends TimerState {
-  TimerRunningFinished(int duration) : super(duration);
+  TimerRunningFinished() : super(0);
 
   @override
   String toString() => 'TimerRunningFinished { duration: $duration }';
