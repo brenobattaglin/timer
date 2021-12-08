@@ -17,6 +17,7 @@ class TimerBloc extends Bloc<TimerEvent, TimerState> {
       : _ticker = ticker,
         super(TimerInitial(_duration)) {
     on<TimerStarted>(_onStarted);
+    on<TimerTicked>(_onTicked);
   }
 
   // Cancel the subscription when the bloc is closed.
@@ -38,5 +39,11 @@ class TimerBloc extends Bloc<TimerEvent, TimerState> {
             TimerTicked(duration: duration),
           ),
         );
+  }
+
+  void _onTicked(TimerTicked event, Emitter<TimerState> emit) {
+    emit(
+      event.duration > 0 ? TimerRunning(event.duration) : TimerRunningFinished(),
+    );
   }
 }
