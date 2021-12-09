@@ -1,1 +1,2 @@
-export 'logic/ticker.dart';
+export 'logic/logic.dart';
+export 'presentation/presentation.dart';
