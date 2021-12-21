@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:timer/timer/timer.dart';
 
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
+
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Timer',
       theme: ThemeData.dark().copyWith(
         textTheme: const TextTheme().copyWith(
@@ -13,7 +19,14 @@ class App extends StatelessWidget {
           ),
         ),
         scaffoldBackgroundColor: const Color(0xff2F3543),
+        appBarTheme: const AppBarTheme(
+          color: Colors.transparent,
+          elevation: 0,
+        ),
         primaryColor: const Color(0xff2F3543),
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Color(0xffeceff4),
+        ),
       ),
       home: const TimerPage(),
     );
