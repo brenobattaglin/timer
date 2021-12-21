@@ -10,28 +10,28 @@ abstract class TimerState extends Equatable {
 }
 
 class TimerInitial extends TimerState {
-  TimerInitial(int duration) : super(duration);
+  const TimerInitial(int duration) : super(duration);
 
   @override
   String toString() => 'TimerInitial { duration: $duration }';
 }
 
 class TimerRunning extends TimerState {
-  TimerRunning(int duration) : super(duration);
+  const TimerRunning(int duration) : super(duration);
 
   @override
   String toString() => 'TimerRunning { duration: $duration }';
 }
 
 class TimerRunningPaused extends TimerState {
-  TimerRunningPaused(int duration) : super(duration);
+  const TimerRunningPaused(int duration) : super(duration);
 
   @override
   String toString() => 'TimerRunningPaused { duration: $duration }';
 }
 
 class TimerRunningFinished extends TimerState {
-  TimerRunningFinished() : super(0);
+  const TimerRunningFinished() : super(0);
 
   @override
   String toString() => 'TimerRunningFinished { duration: $duration }';

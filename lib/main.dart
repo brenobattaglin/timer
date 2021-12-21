@@ -5,7 +5,7 @@ import 'package:timer/observer.dart';
 
 void main() {
   BlocOverrides.runZoned(
-    () => runApp(App()),
+    () => runApp(const App()),
     blocObserver: Observer(),
   );
 }
