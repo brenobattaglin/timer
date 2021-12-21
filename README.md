@@ -1,16 +1,18 @@
 # timer
 
-A new Flutter project.
+A counter app made with Flutter and Flutter BLoC.
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/8771994/146989802-30d87167-a35e-426b-8e56-9890bdc1e9a1.png" alt="timer app image" height="650"/>
+</div>
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Open your terminal on the project root folder and download the packages:
 
-A few resources to get you started if this is your first Flutter project:
+	flutter pub get
+      
+## Run the app
+Using your terminal:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+	flutter run
