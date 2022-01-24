@@ -7,9 +7,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-    ]);
+    _lockScreenOrientation();
+    _setStatusBarIconsColorToWhite();
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -32,5 +31,17 @@ class App extends StatelessWidget {
       ),
       home: const TimerPage(),
     );
+  }
+
+  void _lockScreenOrientation() {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
+  }
+
+  void _setStatusBarIconsColorToWhite() {
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarBrightness: Brightness.dark,
+    ));
   }
 }
